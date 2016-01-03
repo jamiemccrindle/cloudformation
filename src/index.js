@@ -3,11 +3,17 @@ import * as AWS from 'aws-sdk'
 import * as yargs from 'yargs';
 import { inspect } from 'util';
 
-export async function updateCloudformation(logger, cf, args) {
+/**
+ * Create or update a cloudformation stack
+ *
+ * @param logger console like object
+ * @param {Function} cf function that returns cloudformation json
+ * @param {string} stackName the name of the stack
+ * @param {Object.<string,object>} args cloudformation parameters
+ */
+export async function updateCloudformation(logger, cf, stackName, args) {
 
   let cloudFormation = promisifyAll(new AWS.CloudFormation(), {suffix: 'Promised'});
-
-  let stackName = args.StackName;
 
   let cloudFormationTemplate = cf();
 
