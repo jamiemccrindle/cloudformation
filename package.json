@@ -4,8 +4,18 @@
   "description": "Cloudformation Deployment Utilities",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "babel src --out-dir lib",
+    "prepublish": "npm run compile"
   },
   "author": "Jamie McCrindle",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "babel": "^6.3.26"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.3.14",
+    "bluebird": "^3.0.6",
+    "aws-sdk": "^2.2.26"
+  }
 }

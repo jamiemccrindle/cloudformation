@@ -2,9 +2,8 @@ import { promisifyAll } from 'bluebird';
 import * as AWS from 'aws-sdk'
 import * as yargs from 'yargs';
 import { inspect } from 'util';
-import cf from './cloudformation';
 
-export async function updateCloudformation(logger, args) {
+export async function updateCloudformation(logger, cf, args) {
 
   let cloudFormation = promisifyAll(new AWS.CloudFormation(), {suffix: 'Promised'});
 
