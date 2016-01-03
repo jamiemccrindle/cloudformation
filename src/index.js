@@ -52,6 +52,7 @@ export async function updateCloudformation(logger, cf, stackName, args) {
   if (stackExists) {
     logger.info('updating stack', stackName);
     let result = await cloudFormation.updateStackPromised(params);
+
     logger.info('completed update', result);
   } else {
     logger.info('creating stack', stackName);
