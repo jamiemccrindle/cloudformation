@@ -1,6 +1,6 @@
 {
   "name": "cloudformation",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cloudformation Deployment Utilities",
   "main": "lib/index.js",
   "scripts": {
